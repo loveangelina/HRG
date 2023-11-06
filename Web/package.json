@@ -1,0 +1,21 @@
+{
+  "name": "miband5-web",
+  "author": "Jaap Heijligers",
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "esbuild --bundle src/index.js --outfile=src/bundle.js",
+    "build": "esbuild --bundle src/index.js --outfile=dist/bundle.js",
+    "serve": "npm run watch & cd src; npx http-server -p 8081",
+    "serve:dist": "npm run build && cd dist; npx http-server -p 8081",
+    "lint": "prettier --write src/"
+  },
+  "dependencies": {
+    "esbuild": "0.8.57"
+  },
+  "devDependencies": {
+    "apexcharts": "^3.24.0",
+    "eslint": "^8.7.0",
+    "prettier": "^2.2.1"
+  },
+  "proxy" : "http://localhost:8080/"
+}
